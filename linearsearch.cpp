@@ -1,3 +1,5 @@
+// to find the element in array is present or not
+
 #include<iostream>
 using namespace std;
 
