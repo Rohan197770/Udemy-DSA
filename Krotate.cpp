@@ -1,21 +1,35 @@
 #include<iostream>
 using namespace std;
 
-void rotate(int arr[],int n,int a)
+void reverse(int arr[],int s,int e)
 {
-    for(int i=0;i<n-a;i++)
+    while(s<e)
     {
-        
-        
-            arr[i]=arr[i+a];
-         
-        
+        swap(arr[s],arr[e]);
+        s=s+1;
+        e=e-1;
     }
 
-    for(int i=0;i<n;i++)
-    {
-        cout<<arr[i];
-    }
+}
+
+void rotate(int arr[],int n,int a)
+{  
+   int s=0,e=n-a-1;
+   reverse(arr,s,e);
+
+   int f=n-a;
+   int l=n-1;
+   reverse(arr,f,l);
+
+   int r=0,m=n-1;
+   reverse(arr,r,m);
+   
+   for(int i=0;i<n;i++)
+   {
+       cout<<arr[i];
+   }
+
+
 }
 
 int main()
