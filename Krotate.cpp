@@ -23,7 +23,7 @@ void rotate(int arr[],int n,int a)
 
    int r=0,m=n-1;
    reverse(arr,r,m);
-   
+
    for(int i=0;i<n;i++)
    {
        cout<<arr[i];
@@ -37,7 +37,10 @@ int main()
     int arr[]={1,3,5,7,9};
 
     int n=sizeof(arr)/sizeof(int);
-    int a=1;
+    int a;
+    cout<<"How many times to rotate a array";
+    cin>>a;
+    a=a%n;
 
     rotate(arr,n,a);
 
