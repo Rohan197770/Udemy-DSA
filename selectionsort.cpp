@@ -5,7 +5,7 @@ using namespace std;
 void selection_sort(int arr[],int n)
 {
 
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++)//i=postion
     {
 
         int curr=arr[i];
