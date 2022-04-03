@@ -3,18 +3,41 @@
 
 using namespace std;
 
+string compressstring(string str)
+{
+    int n;
+    n= str.length();
+
+    string output;
+
+    for(int i=0;i<n;i++)
+    {
+        int count =1;
+
+        while(i<n-1 && str[i+1]==str[i])
+        {
+                count++;
+                i++;
+        }
+        output= output+ str[i];
+        output =output+ to_string(count);
+    }
+
+    if(output.length()>str.length())
+    {
+        return str;
+    }
+    else
+    {
+        return output;
+    }
+}
+
 int main()
 {
-    char a[100];
+   string s;
+   getline(cin,s);
 
-    cin.getline(a,100);
-    int count =0;
-
-    for(int i=0;i<strlen(a);i++)
-    {
-        if(a[i]=a[i+1])
-        {
-            count++;
-        }
-    }
+  cout<< compressstring(s);
+    return 0;
 }
