@@ -171,7 +171,7 @@ int main()
     insertAttail(head,5);
     insertAttail(head,6);
     display(head);
-    deletion(head,2);
+    deletion(head,1);
     display(head);
 
     return 0;
