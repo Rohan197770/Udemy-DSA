@@ -148,6 +148,24 @@ bool search(node* head,int key)
 
     return false;
 }
+int recursiveSearh(int key,node*head)
+{
+    if(head==NULL)
+    {
+        return -1;
+    }
+    if(head->data==key)
+    {
+        return 1;
+    }
+    int subindex=recursiveSearh(key,head->next);
+
+    if(subindex==-1)
+    {
+        return -1;
+    }
+    return subindex+1;
+}
 
 int main()
 {
@@ -156,10 +174,12 @@ int main()
     insertAtTail(head,1);
     insertAtTail(head,3);
 
-    display(head);
+
+//     display(head);
     insertAthead(head,6);
-    display(head);
-   cout<< search(head,5);
+//     display(head);
+//    cout<< search(head,5);
+cout<<recursiveSearh(3,head);
 
     return 0;
 

@@ -80,7 +80,34 @@ void deletion(node* &head ,int val)
 
     temp->next=temp->next->next;
 
+    
+
     delete todelete;
+}
+
+void deleteAtpos(node* &head,int pos)
+{
+    if(pos==1)
+    {
+        node* todelete=head;
+        head=head->next;
+      todelete->next=NULL;
+        delete todelete;
+
+        return;
+    }
+    int x=1;
+    node* temp=head;
+    while(x!=pos-1 && temp!=NULL)
+    {
+        temp=temp->next;
+        x++;
+    }
+    node* n=temp->next;
+    temp->next=n->next;
+    // n->next=NULL;
+
+    delete n;
 }
 
 int main()
@@ -92,9 +119,12 @@ int main()
          insertAttail(head,3);
             insertAttail(head,4);
             display(head);
-            deletion(head,3);
-            display(head);
-            deleteAthead(head);
+            // deletion(head,3);
+            // display(head);
+            // deleteAthead(head);
+            // display(head);
+
+            deleteAtpos(head,4);
             display(head);
             
 
