@@ -56,6 +56,28 @@ void insert_at_middle(node* &head,int pos,int val)
    n->next=temp->next;
    temp->next=n;
 }
+void delete_at_pos(node* &head,int pos)
+{
+    node* prev=head;
+    node* curr=head;
+    if(pos==1)
+    {
+        head=curr->next;
+        delete curr;
+        curr==NULL;
+        return;
+    }
+    int count=1;
+    while(pos!=1)
+    {
+       prev=curr;
+       curr=curr->next;
+       pos--;
+    }
+    prev->next=curr->next;
+    delete curr;
+    return;
+}
 
 
 
@@ -81,7 +103,9 @@ int main()
     display(head);
     // insertAthead(head,6);
     // display(head);
-    insert_at_middle(head,2,7);
+    // insert_at_middle(head,2,7);
+    // display(head);
+    delete_at_pos(head,3);
     display(head);
 
     return 0;
